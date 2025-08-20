@@ -1,0 +1,11 @@
+{
+  "name": "temp1",
+  "html": "welcome",
+  "sizes": {
+    "width": 800,
+    "height": 350
+  },
+  "animated": true,
+  "time": 2,
+  "fps": 15
+}

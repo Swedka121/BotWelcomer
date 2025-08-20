@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Welcome</title>
+  </head>
+  <body>
+    <video id="wait" class="fullscreen" autoplay muted loop>
+      <source type="video/mp4" src="_-_root_link_-_/public/back2.mp4" />
+    </video>
+    <div class="line">
+      <span class="blur"></span>
+    </div>
+    <div class="container">
+      <img class="avatar" src="_-_avatar_-_" />
+      <div class="column">
+        <h1>_-_username_-_</h1>
+        <p>Welcome to our server</p>
+      </div>
+    </div>
+    <div class="line">
+      <span class="blur"></span>
+    </div>
+  </body>
+</html>
+
+<style>
+  body {
+    background: black;
+    padding: 0%;
+    margin: 0%;
+
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .line {
+    width: 90%;
+    height: 1px;
+
+    overflow: hidden;
+  }
+  .blur {
+    display: block;
+    width: 90vw;
+    height: 90vw;
+    background: #fadf57;
+    filter: blur(20vw);
+  }
+  .fullscreen {
+    width: 100vw;
+    height: 100vh;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    object-fit: cover;
+  }
+  .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: 10%;
+
+    width: 90%;
+    max-height: 300px;
+    height: 100%;
+    min-height: 200px;
+
+    color: white;
+    font-family: "Goldman";
+  }
+  .avatar {
+    width: 20vw;
+    height: 20vw;
+
+    max-height: 250px;
+    max-width: 250px;
+
+    border-radius: 30vw;
+    border: 0.3vw solid #fadf57;
+  }
+  .column {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+  }
+
+  p {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 60%;
+  }
+  h1 {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 60%;
+  }
+</style>
