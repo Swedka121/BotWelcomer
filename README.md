@@ -21,13 +21,13 @@ Before starting, create a `.env` file in the project root with the following var
 
 | Variable    | Description                     | Example                  |
 | ----------- | ------------------------------- | ------------------------ |
-| `TOKEN`     | Your Discord bot token          | `your_discord_bot_token` |
+| `BOT_TOKEN` | Your Discord bot token          | `your_discord_bot_token` |
 | `ROOT_LINK` | The root server link (base URL) | `http://localhost:3000`  |
 
 Example `.env`:
 
 ```env
-TOKEN=your_discord_bot_token
+BOT_TOKEN=your_discord_bot_token
 ROOT_LINK=http://localhost:3000
 ```
 
