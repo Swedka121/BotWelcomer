@@ -9,8 +9,7 @@
     "allowJs": true,
     "typeRoots": [
       "./node_modules/@types/",
-      "./types",
-      "./node_modules/puppeteer/index.d.ts"
+      "./types"
     ],
 
     // Bundler mode

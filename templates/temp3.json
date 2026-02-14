@@ -1,11 +1,11 @@
 {
-  "name": "temp1",
-  "html": "welcome",
+  "name": "temp3",
+  "html": "welcome2",
   "sizes": {
     "width": 800,
     "height": 350
   },
   "animated": true,
-  "time": 2,
-  "fps": 12
+  "time": 5,
+  "fps": 10
 }

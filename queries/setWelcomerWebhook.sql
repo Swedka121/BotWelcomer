@@ -1,0 +1,1 @@
+UPDATE Channel SET welcomer_webhook = ? WHERE id = ?;
