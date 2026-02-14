@@ -106,8 +106,17 @@ export class FrameGenerator {
   constructor() {}
 
   async initializate() {
+    const isArm = process.arch === "arm64";
+
+    const executablePath = isArm ? "/usr/bin/chromium-browser" : undefined; // undefined tells Puppeteer to use its own bundled Chrome
+
     this.browser = await puppeteer.launch({
-      headless: true,
+      executablePath: executablePath,
+      args: [
+        "--no-sandbox",
+        "--disable-setuid-sandbox",
+        "--disable-dev-shm-usage",
+      ],
     });
 
     ffmpeg.setFfmpegPath(ffmpegPath as string);
