@@ -11,6 +11,7 @@ interface GuildSettings {
   welcome_channel: string | undefined;
   configurator_webhook: string | undefined;
   welcomer_webhook: string | undefined;
+  changelog_webhook: string | undefined;
 }
 
 interface WebhookIds {
@@ -37,6 +38,11 @@ export class DBQuery {
   setWelcomerWebhook(webhookId: string, guildId: string) {
     this.db
       .prepare(DBQuery.getQueryText("setWelcomerWebhook"))
+      .run(webhookId, guildId);
+  }
+  setChangelogWebhook(webhookId: string, guildId: string) {
+    this.db
+      .prepare(DBQuery.getQueryText("setChangelogWebhook"))
       .run(webhookId, guildId);
   }
   setActiveTemplate(template: string, guildId: string) {
@@ -75,5 +81,11 @@ export class DBQuery {
         .prepare(DBQuery.getQueryText("getWebhookUrl"))
         .get(webhook_id) as { webhook_url: string }
     ).webhook_url;
+  }
+  getAllChangelogWebhooks(): string[] {
+    return this.db
+      .prepare(DBQuery.getQueryText("getAllChangelogWebhooks"))
+      .all()
+      .map((el: any) => el.webhook_url as string);
   }
 }
