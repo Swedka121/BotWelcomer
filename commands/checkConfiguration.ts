@@ -32,6 +32,7 @@ export default {
       .setDescription(
         `* **Welcome Channel:** ${setting?.welcome_channel ? `<#${setting.welcome_channel}>` : "*Not configured*"}\n
         * **Active Template:** \`${setting?.selected_template ?? "None"}\`\n\n
+        * **Changelog service:** ${setting?.changelog_webhook ? "✅ Configured" : "❌ Not ready"}
         > **Status:** ${configured ? "Ready ✅" : "Incomplete ❌"}`,
       )
       .setColor(configured ? 0x2ecc71 : 0xed4245);
