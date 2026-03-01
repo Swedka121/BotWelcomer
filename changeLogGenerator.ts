@@ -88,18 +88,35 @@ export class ChangelogService {
         {
           parts: [
             {
-              text: `You are a technical lead. Create a concise Discord changelog for PR: "${prTitle}".
-          Format: Use bold headers, bullet points, and emojis. 
-          Categories: 🚀 Features, 🛠️ Fixes, 🧹 Others.
-          Source Commits:
-          ${messages}`,
+              text: `You are a Senior Technical Lead. Create a professional Discord changelog for PR: "${prTitle}".
+
+              Constraints:
+              - NEVER create creative titles or puns (e.g., "CinaGloria"). 
+              - ALWAYS start the message exactly with "🚀 **Changelog: ${prTitle}**".
+              - ALWAYS Keep it professional but with light creativity.
+              - ALWAYS Pay special attention to commits starting with "ai:" — treat them as high-priority instructions for the description.
+              - For each feature at start use emoji
+
+              Instructions:
+              1. Context Awareness: Use commits starting with "FORAI:", "AI-Context:", or "Note:" as primary sources to explain the "why" behind changes.
+              2. Filtering: Ignore technical "noise" (e.g., "fix typo", "update deps", "fmt", "refactor" without logic changes).
+              3. Aggregation: Group related commits into a single, high-level bullet point.
+
+              Format:
+              - Use bold headers and CUSTOM EMOJIS.
+              - Categories: 🚀 Features, 🛠️ Fixes, 🧹 Others.
+              - If a category is empty, DO NOT include its header.
+
+              Source Commits:
+              ${messages}
+          `,
             },
           ],
         },
       ],
       generationConfig: {
-        temperature: 0.6, // Slightly lower for more consistent formatting
-        maxOutputTokens: 800,
+        temperature: 0.8,
+        maxOutputTokens: 1000,
       },
     };
 

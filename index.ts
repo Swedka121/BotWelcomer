@@ -44,6 +44,7 @@ import { WEBHOOK_TYPE } from "./types/webhookTypeEnum";
 import { getConfiguratorWebhook } from "./utils/getConfiguratorWebhook";
 import { getWelcomerWebhook } from "./utils/getWelcomerWebhook";
 import { error } from "console";
+import { title } from "process";
 config();
 
 const client = new Client({
@@ -87,8 +88,12 @@ app.get("/publishChangelog", async (req, res) => {
         body: JSON.stringify({
           embeds: [
             {
-              title: "🚀 New Development Update",
-              description: changelogText,
+              title: changelogText.split("\n")[0],
+              description: [
+                "\n\n",
+                changelogText.split("\n").slice(1).join("\n").trim(),
+                "\n\n",
+              ].join(""),
               color: 0x5865f2,
               timestamp: new Date().toISOString(),
               footer: {
